@@ -1,0 +1,98 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	max-width: 98%;
+	background-color: #ccc;
+	/*background: url('./../img/fondo1.jpg');*/
+}
+
+h2{
+	color: #00f;
+}
+
+ul{
+	display: inline;
+}
+
+nav>ul>li{
+	display: inline-block;
+}
+
+
+header{
+	height: 100px;
+	background-color: #00ff00;
+}
+
+aside{	
+	height: 500px;
+	background-color: #ff0000;
+}
+
+.sec{
+	height: 500px;
+	background-color: #4546ab;
+}
+
+article{
+	height: 500px;
+	background-color: #528a0c;
+}
+
+footer{
+	height: 80px;
+	clear: both;
+	text-align: center;
+	padding-top: 40px;
+	background-color: rgba(255, 255, 255, .5);
+	color: rgb(255, 255, 255);
+	font-size: 2em;
+}
+
+a{
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+	background-color: #ef9f09;
+	color: #fff;
+
+	border-radius: 5px;
+
+	-ms-transition:all 0.5s ease-out; /*microsoft*/
+	-moz-transition:all 0.5s ease-out;/*mozilla*/
+	-o-transition:all 0.5s ease-out;/*opera*/
+	-webkit-transition:all 0.5s ease-out;/*choromw y safari*/
+	transition:all 0.5s ease-out;
+}
+
+a:hover{
+	color: #000;
+	border: #00f dashed 1px;
+	border-radius: 0px 20px 0px 20px;
+	-webkit-border-radius: 0px 20px 0px 20px;
+	-o-border-radius: 0px 20px 0px 20px;
+	-moz-border-radius: 0px 20px 0px 20px;
+
+	transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+	-o-transform: rotate(-5deg);
+	-moz-transform: rotate(-5deg);
+
+	background-color: #fff;
+	
+	-ms-transition:all 0.5s ease-in; /*microsoft*/
+	-moz-transition:all 0.5s ease-in;/*mozilla*/
+	-o-transition:all 0.5s ease-in;/*opera*/
+	-webkit-transition:all 0.5s ease-in;/*choromw y safari*/
+	transition:all 0.5s ease-in;
+}
+
+
+nav{
+	padding-top: 20px;
+}
+
+
+

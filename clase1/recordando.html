@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Recordando css , html</title>
+</head>
+<body>
+	<h1>Recordando css , html</h1>
+	<h2>Recordando css , html</h2>
+	<h3>Recordando css , html</h3>
+	<h4>Recordando css , html</h4>
+	<h5>Recordando css , html</h5>
+	<h6>Recordando css , html</h6>
+
+	<h2>Parrafo</h2>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident suscipit odio in illo commodi, error dolor dignissimos molestiae. Sapiente perferendis nostrum saepe fugiat totam quis, ratione vero, illo nisi sunt?</p>
+
+	<p>lorem</p>
+
+	<h2>Lista ordenada</h2>
+	<ol>
+		<li>Opcion uno</li>
+		<li>Opcion dos</li>
+		<li>Opcion tres</li>
+		<li>Opcion cuatro</li>
+		<li>Opcion cinco</li>
+	</ol>
+
+	<h2>Lista Desordenada</h2>
+	<ul>
+		<li>Opcion uno</li>
+		<li>Opcion dos</li>
+		<li>Opcion tres</li>
+		<li>Opcion cuatro</li>
+		<li>Opcion cinco</li>
+	</ul>
+
+	<h2>Lista anidada</h2>
+	<ul>
+		<li>Uno</li>
+		<ol>
+			<li>uno</li>
+			<li>dos</li>
+			<li>tres</li>
+		</ol>
+		<li>Dos</li>
+		<li>Tres</li>
+	</ul>
+
+	<h2>Tablas estructura</h2>
+	<table border=1>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Apellidos</th>
+				<th>Edad</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>Juan</td>
+				<td>Chavez algo</td>
+				<td>30</td>
+				<td>
+					<button>+</button>
+					<button>-</button>
+					<button>ver</button>
+				</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Juan</td>
+				<td>Chavez algo</td>
+				<td>30</td>
+				<td>
+					<button>+</button>
+					<button>-</button>
+					<button>ver</button>
+				</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Juan</td>
+				<td>Chavez algo</td>
+				<td>30</td>
+				<td>
+					<button>+</button>
+					<button>-</button>
+					<button>ver</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2> Tablas </h2>
+	<table border="1">
+		<tr>
+			<td>Uno</td>
+			<td>Dos</td>
+			<td>Tres</td>
+			<td>Cuatro</td>
+		</tr>
+		<tr>
+			<td>Cinco</td>
+			<td>Seis</td>
+			<td>Siete</td>
+			<td>Ocho</td>
+		</tr>
+		<tr>
+			<td>Nueve</td>
+			<td>Diez</td>
+			<td>Once</td>
+			<td>Doce</td>
+		</tr>
+	</table>
+
+	<h2>tabla personalizada</h2>
+	<table border="1">
+		<tr>
+			<td>Uno</td>
+			<td colspan="2">Dos</td>
+			<td>Cuatro</td>
+		</tr>
+		<tr>
+			<td rowspan="2">Cinco</td>
+			<td colspan="3">Seis</td>
+		</tr>
+		<tr>
+			<td>Diez</td>
+			<td>Once</td>
+			<td>Doce</td>
+		</tr>
+		<tr>
+			<td colspan="4">Todo</td>
+		</tr>
+		
+	</table>
+
+	<h2>Formularios</h2>
+
+	<form action="" method="post">
+		<fieldset>
+			<legend>Iniciar Sesion</legend>			
+			<label for="user">Ingrese Usuario:</label>
+			<input type="text" name="usuario" id="user" placeholder="Ej. juan" required="required" value="juan"> <br>
+			<label for="pass">Ingrese su Contraseña</label>
+			<input type="password" name="contrasena" id="pass" placeholder="*********" required="required">
+			<br>
+
+			<input type="checkbox" name="recordar"> Recordar Contraseña
+
+			<br>
+
+			<select name="idioma" id="">
+				<option value="español">Español</option>
+				<option value="ingles">Ingles</option>
+			</select>
+
+			<select name="intereses" id="" multiple>
+				<option value="html">HTML</option>
+				<option value="css">CSS</option>
+				<option value="laravel">LARAVEL</option>
+				<option value="node">NODE.JS</option>
+			</select>
+
+			<br>
+			<input type="radio" name="genero" value="masculino">Masculino
+			<input type="radio" name="genero" value="femenino">Femenino
+			
+			<br>
+
+			<input type="submit" value="Ingresar">
+			<input type="reset">
+			<input type="button" value="validar">
+		</fieldset>
+		
+	</form>
+
+</body>
+</html>

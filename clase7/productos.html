@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<title>Html 5 - Etiquetas</title>
+	
+	<link rel="stylesheet" href="css/estilo.css">
+
+	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+</head>
+<body>
+
+	<header class="row">
+		<figure class="col-lg-4 col-md-3 col-12" >
+			<img width="150px" src="./img/logo.png" alt="Nombre de mi empresa">
+		</figure>
+		<nav class="col-lg-8 col-md-9 col-12">
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="galeria.html">Galeria</a></li>
+				<li><a href="productos.html">Productos</a></li>
+				<li><a href="servicios.html">Servicios</a></li>
+				<li><a href="contacto.html">Contacto</a></li>
+				<li><a href="acercade.html">Acerca de</a></li>
+			</ul>			
+		</nav>
+	</header>
+	
+	<div class="container">
+		<section class="row" id="prod">
+			<div class="col-md-4">
+				<form action="">
+					<label for="nombre">Nombre de Producto</label>
+					<input type="text" id="nombre" placeholder="Ingrese nombre de Producto">
+
+					<label for="descripcion">Descripcion de Producto</label>
+					<textarea  id="descripcion" cols="30" rows="5"></textarea>
+
+					<label for="categoria">Seleccione la categoria</label>
+					<select id="categoria">
+						<option value="Mueble">Mueble</option>
+						<option value="Ropa">Ropa</option>
+						<option value="Electrodomestico">Electrodomestico</option>
+						<option value="Accesorios">Accesorios</option>
+					</select>
+
+					<input type="button" value="Registrar" onclick="guardar_datos()">
+				</form>
+			</div>
+			<div class="col-md-8">
+				<table border="1">
+					<thead>
+						<th>nombre</th>
+						<th>Descripcion</th>
+						<th>categoria</th>
+						<th>Acciones</th>
+					</thead>
+					<tbody id="datos">
+						<tr>
+							<td>Chamarra</td>
+							<td>Esta es la descripcion de ropa</td>
+							<td>Ropa</td>
+							<td>
+								<button>Ver</button>
+								<button>Editar</button>
+								<button>Eliminar</button>
+							</td>
+						</tr>
+					</tbody>					
+				</table>
+			</div>
+		</section>
+
+		<footer class="row">
+			<div class="col-md-12">
+				<p>&copy; Derechos reservados</p>
+			</div>			
+		</footer>
+		
+	</div>
+	<script src="js/mi-script.js"></script>
+<script>
+	var producto = [];
+	producto.push(
+				{
+					nombre: "Silla", 
+					descripcion: "Esta es la descripcion de silla",
+					categoria:[{
+						nombre: "Mueble",
+						descripcion: "esta es la descripcion de la categoria"
+					},
+					{
+						nombre: "oficina",
+						descripcion: "Esta es la descripcionde la categoria oficina"
+					}]
+				},
+				{
+					nombre: "Mesa", 
+					descripcion: "Esta es la descripcion de Mesa",
+					categoria:[
+						{
+							nombre:"Mueble",
+							descripcion: "Esta es la descripcion de la categoria"
+						},
+						{
+							nombre:"oficina",
+							descripcion: "Esta es la descripcionde la categoria oficina"
+						}
+					]
+				}
+				);
+	//localStorage.setItem("bd_productos", JSON.stringify(producto));
+
+	var datos="";
+
+	for (var i = 0; i < producto.length; i++) {
+		datos += "<tr><td>"+ producto[i].nombre +"</td><td>"+ producto[i].descripcion  +"</td><td>"+ producto[i].categoria[0].nombre +"</td><td><button>Ver</button><button>Editar</button><button>Eliminar</button></td></tr>";
+	};
+	document.getElementById('datos').innerHTML = datos;
+
+
+	//alert(localStorage.getItem("bd_productos"));
+
+
+
+	console.log(producto);
+	//document.write(producto);
+
+	actualizar();
+
+
+	function guardar_datos() {
+		//console.log("Registrando...");
+		var nombre = document.getElementById('nombre').value;
+		var descripcion = document.getElementById('descripcion').value;
+		var categoria = document.getElementById('categoria').value;
+
+		var obj_producto = { 
+							nombre: nombre, 
+							descripcion: descripcion, 
+							categoria: [{ 
+								nombre: categoria, 
+								descripcion: "defecto"
+							}]
+							}
+		var datos_string = localStorage.getItem("bd_productos");
+		var datos_json = [];
+		datos_json = JSON.parse(datos_string);
+		datos_json.push(obj_producto);
+
+		localStorage.setItem("bd_productos", JSON.stringify(datos_json));
+		console.log(datos_json);
+
+		actualizar();
+}
+
+function actualizar() {
+
+	var datos_string = localStorage.getItem("bd_productos");
+	var producto = [];
+	producto = JSON.parse(datos_string);
+
+	var datos="";
+
+	for (var i = 0; i < producto.length; i++) {
+		datos += "<tr><td>"+ producto[i].nombre +"</td><td>"+ producto[i].descripcion  +"</td><td>"+ producto[i].categoria[0].nombre +"</td><td><button>Ver</button><button>Editar</button><button onclick='eliminar("+i+")'>Eliminar</button></td></tr>";
+	};
+	document.getElementById('datos').innerHTML = datos;
+}
+
+function eliminar(j){
+	var datos_string = localStorage.getItem("bd_productos");
+	var producto = [];
+	producto = JSON.parse(datos_string);
+
+	var datos="";
+	for (var i = 0; i < producto.length; i++) {
+		if (i == j) {
+			producto.splice(j, 1);			
+		};
+	};
+
+	localStorage.setItem("bd_productos", JSON.stringify(producto));
+	actualizar();
+
+}
+</script>
+	
+</body>
+</html>
